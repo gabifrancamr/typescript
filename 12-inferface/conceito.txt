@@ -1,0 +1,45 @@
+Em TypeScript, uma interface é uma forma poderosa de definir contratos para objetos em termos de tipos. Ela permite que você defina a estrutura de um objeto, especificando quais propriedades deve ter e que tipo de valor cada propriedade deve ter. As interfaces são frequentemente usadas para descrever a forma que um objeto deve ter, tornando mais fácil para o desenvolvedor entender como interagir com esse objeto.
+Aqui está um exemplo simples de uma interface em TypeScript:
+
+interface Pessoa {
+  nome: string;
+  idade: number;
+  email?: string; // Propriedade opcional
+}
+
+// Exemplo de objeto que segue a interface Pessoa
+const pessoa1: Pessoa = {
+  nome: "João",
+  idade: 25,
+  email: "joao@example.com"
+};
+
+// Outro exemplo que segue a interface Pessoa
+const pessoa2: Pessoa = {
+  nome: "Maria",
+  idade: 30
+};
+
+Neste exemplo, a interface Pessoa define que um objeto do tipo Pessoa deve ter as propriedades nome e idade, ambas com tipos específicos. A propriedade email é marcada como opcional com o operador ?, o que significa que um objeto que implementa a interface pode ou não ter essa propriedade.
+
+Além disso, as interfaces podem ser utilizadas em classes para garantir que a classe implemente métodos específicos. Isso é útil quando se trabalha com programação orientada a objetos em TypeScript. Aqui está um exemplo:
+
+interface Animal {
+  fazerBarulho(): void;
+}
+
+class Cachorro implements Animal {
+  fazerBarulho() {
+    console.log("Au au!");
+  }
+}
+
+class Gato implements Animal {
+  fazerBarulho() {
+    console.log("Miau!");
+  }
+}
+
+Neste exemplo, a interface Animal declara um método fazerBarulho(). As classes Cachorro e Gato implementam essa interface, garantindo que cada uma delas tenha um método fazerBarulho().
+
+Interfaces são uma parte fundamental da tipagem estática no TypeScript e são usadas para fornecer uma maneira de definir contratos claros e reutilizáveis em seu código. Elas são uma ferramenta poderosa para garantir a consistência e a legibilidade do código.
